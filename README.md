@@ -1,4 +1,4 @@
-# Mihail's Chat (AngularJS)
+# Mihail's Chat (Angular)
 
 >_I have written a tutorial about how I did this. You can find it [here](https://mihail-gaberov.eu/) or [here](https://mihail-gaberov.eu)_
 
@@ -6,7 +6,7 @@ An Angular single page chat application (SPA) built with the following technolog
 - Angular (v10.0.0 at the moment of writting)
 - RxJS
 - Express.js with Socket.io
-- styled-components (SASS)
+- styled-components (SASS) ???
 - Karma/Jasmine
 
 ### Screenshots
