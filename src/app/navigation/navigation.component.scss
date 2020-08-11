@@ -1,0 +1,25 @@
+.navigation {
+    display: flex;
+    background-color: #1e5266;
+    nav {
+        width: 50%;
+        text-align: center;
+        fa-icon {
+            margin-right: .3em;
+        }
+        &:hover {
+            background-color: black;
+        }
+        a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 1.4em;
+            padding: 14px 16px;
+            &.active {
+                background-color: #111;
+                border-bottom: 3px solid #ccc;
+            }
+        }
+    }
+}
