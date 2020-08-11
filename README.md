@@ -54,23 +54,31 @@ To install dependencies:
 To run the client app:
 
 ```shell
-  
+ng serve  
 ```
 To run the server app:
 
 ```shell
   npm run server:watch
 ```
-To run the tests:
+To run the unit tests:
 
 ```shell
-  
+ng test
+```
+To run the e2e tests:
+
+```shell
+ng e2e
 ```
 Browse to [http://localhost:4200](http://localhost:4200) and see the running app. In order to test, open it in two different computers,
  or computer and a phone, or two browsers on the same computer (one of it in incognito mode). 
  _If you are running it locally, make sure to change the __host__ variable in Socket.ts (line:28) and its value to match
  your local network address - the one of the computer you are running the server app._ 
  
+### Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ### Deploy to Netlify 
 
