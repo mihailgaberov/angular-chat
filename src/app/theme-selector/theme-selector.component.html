@@ -1,10 +1,10 @@
 <div>
     <div>
-        <input checked="true" radioGroup="theme-selectors" type='radio' id='light' name='theme-selectors' (click)="toggleTheme()" />
-        <label htmlFor='light'>Light</label>
+        <input checked type='radio' id='light' name='theme-selectors' (click)="setLightTheme()" />
+        <label for='light'>Light</label>
     </div>
     <div>
-        <input checked="false" type='radio' radioGroup='theme-selectors' id='dark' name='theme-selectors'  (click)="toggleTheme()" />
-        <label htmlFor='dark'>Dark</label>
+        <input type='radio' id='dark' name='theme-selectors'  (click)="setDarkTheme()" />
+        <label for='dark'>Dark</label>
     </div>
 </div>
