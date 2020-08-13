@@ -1,10 +1,12 @@
-<div>
-    <div>
-        <input checked type='radio' id='light' name='theme-selectors' (click)="setLightTheme()" />
-        <label for='light'>Light</label>
+<div class="theme-selector">
+  <label>Interface Colour</label>
+  <div class="radio-group">
+    <div><input checked type='radio' id='light' name='theme-selectors' (click)="setLightTheme()"/>
+      <label for='light'>Light</label>
     </div>
     <div>
-        <input type='radio' id='dark' name='theme-selectors'  (click)="setDarkTheme()" />
-        <label for='dark'>Dark</label>
+      <input type='radio' id='dark' name='theme-selectors' (click)="setDarkTheme()"/>
+      <label for='dark'>Dark</label>
     </div>
+  </div>
 </div>
