@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ThemeService } from "src/app/theme/theme.service";
+import { ThemeService } from 'src/app/theme/theme.service';
 
 @Component({
   selector: 'app-theme-selector',
@@ -12,7 +12,15 @@ export class ThemeSelectorComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  toggleTheme() {
+  setLightTheme(): void {
+    this.themeService.setLightTheme();
+  }
+
+  setDarkTheme(): void {
+    this.themeService.setDarkTheme();
+  }
+
+  toggleTheme(): void {
     if (this.themeService.isDarkTheme()) {
       this.themeService.setLightTheme();
     } else {

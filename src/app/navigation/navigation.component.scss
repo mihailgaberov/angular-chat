@@ -1,6 +1,6 @@
 .navigation {
     display: flex;
-    background-color: #1e5266;
+    background-color: var(--secondary-light);
     nav {
         width: 50%;
         text-align: center;
@@ -12,12 +12,12 @@
         }
         a {
             display: block;
-            color: white;
+            color: var(--primary-light);
             text-decoration: none;
             font-size: 1.4em;
             padding: 14px 16px;
             &.active {
-                background-color: #111;
+                background-color: var(--secondary-dark);
                 border-bottom: 3px solid #ccc;
             }
         }
