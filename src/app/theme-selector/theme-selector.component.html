@@ -1,1 +1,10 @@
-<p>theme-selector works!</p>
+<div>
+    <div>
+        <input checked="true" radioGroup="theme-selectors" type='radio' id='light' name='theme-selectors' (click)="toggleTheme()" />
+        <label htmlFor='light'>Light</label>
+    </div>
+    <div>
+        <input checked="false" type='radio' radioGroup='theme-selectors' id='dark' name='theme-selectors'  (click)="toggleTheme()" />
+        <label htmlFor='dark'>Dark</label>
+    </div>
+</div>
