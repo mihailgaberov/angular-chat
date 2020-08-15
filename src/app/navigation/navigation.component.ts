@@ -18,7 +18,6 @@ export class NavigationComponent implements OnInit {
     this.settingsTabLabel = translationService.getActiveTranslation().properties.nav.settingsTabLabel;
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }
