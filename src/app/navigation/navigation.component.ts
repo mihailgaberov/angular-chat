@@ -10,6 +10,7 @@ import {TranslationsService} from '../translations/translations.service';
 export class NavigationComponent implements OnInit {
   faComment = faComment;
   faCog = faCog;
+
   public chatTabLabel: string;
   public settingsTabLabel: string;
 
