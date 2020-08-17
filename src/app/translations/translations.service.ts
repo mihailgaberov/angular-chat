@@ -16,12 +16,8 @@ export class TranslationsService {
     return this.active;
   }
 
-  setEnglish(): void {
-    this.setActiveLanguage(english);
-  }
-
-  setDeutsch(): void {
-    this.setActiveLanguage(deutsch);
+  setLanguage(lang): void {
+    this.setActiveLanguage(lang);
   }
 
   setActiveLanguage(lang: Translations): void {
