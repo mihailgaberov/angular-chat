@@ -30,7 +30,7 @@ export const english: Translations = {
       option1: 'On',
       option2: 'Off'
     },
-    userName: 'Username'
+    usernameLabel: 'Username'
   }
 };
 
@@ -61,6 +61,6 @@ export const deutsch: Translations = {
       option1: 'Ein',
       option2: 'Aus'
     },
-    userName: 'Nutzername'
+    usernameLabel: 'Nutzername'
   }
 };

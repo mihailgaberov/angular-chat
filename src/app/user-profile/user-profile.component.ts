@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TranslationsService} from '../translations/translations.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
+  public usernameLabel: string;
 
-  constructor() { }
+  constructor(private translationService: TranslationsService) {
+    this.usernameLabel = translationService.getActiveTranslation().properties.usernameLabel;
+  }
 
   ngOnInit(): void {
   }

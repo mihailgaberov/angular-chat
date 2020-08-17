@@ -5,7 +5,7 @@ import { english, deutsch, Translations } from './translations';
   providedIn: 'root'
 })
 export class TranslationsService {
-  private active: Translations = deutsch;
+  private active: Translations = english;
   private availableTranslations: Translations[] = [english, deutsch];
 
   getAvailableTranslations(): Translations[] {
