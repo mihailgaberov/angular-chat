@@ -23,7 +23,6 @@ export class LanguageSelectorComponent implements OnInit {
   }
 
   onChange(lang: string): void {
-    console.log('.lang', lang);
     this.translationService.setLanguage(lang === 'en' ? english : deutsch);
     this.selectedLang = lang;
   }
