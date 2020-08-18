@@ -11,7 +11,6 @@ export class ResetButtonComponent implements OnInit {
   public buttonLabel: string;
   private translationSubscription: Subscription;
 
-
   constructor(private translationService: TranslationsService) {
   }
 

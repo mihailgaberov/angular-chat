@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {TranslationsService} from '../translations/translations.service';
 import {Subscription} from 'rxjs';
+import { readRecord, storeToLocalStorageDebounced } from '../utilities/localStorageService';
+
 
 @Component({
   selector: 'app-user-profile',
@@ -9,6 +11,7 @@ import {Subscription} from 'rxjs';
 })
 export class UserProfileComponent implements OnInit {
   public usernameLabel: string;
+  public username: string = readRecord('username') || 'guest0001';
   private translationSubscription: Subscription;
 
   constructor(private translationService: TranslationsService) {
@@ -21,4 +24,7 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  changeUserName(e): void {
+    storeToLocalStorageDebounced('username', e.currentTarget.value);
+  }
 }

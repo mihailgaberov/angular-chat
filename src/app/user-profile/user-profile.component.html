@@ -1,4 +1,4 @@
 <div class="user-profile">
     <label for='username'>{{usernameLabel}}</label>
-    <input type='text' name='username' id='username' />
+    <input type='text' name='username' id='username' [value]="username" (focusout)="changeUserName($event)" />
 </div>
