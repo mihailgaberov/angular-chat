@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TranslationsService} from '../translations/translations.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-reset-button',
@@ -8,12 +9,16 @@ import {TranslationsService} from '../translations/translations.service';
 })
 export class ResetButtonComponent implements OnInit {
   public buttonLabel: string;
+  private translationSubscription: Subscription;
+
 
   constructor(private translationService: TranslationsService) {
-    this.buttonLabel = translationService.getActiveTranslation().properties.resetButtonLabel;
   }
 
   ngOnInit(): void {
+    this.translationSubscription = this.translationService.subscribe((data) => {
+      this.buttonLabel = data.properties.resetButtonLabel;
+    });
   }
 
 }
