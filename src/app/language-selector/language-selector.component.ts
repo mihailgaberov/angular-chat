@@ -15,7 +15,6 @@ export class LanguageSelectorComponent implements OnInit, OnDestroy {
   private translationSubscription: Subscription;
 
   constructor(private translationService: TranslationsService) {
-    this.languageLabel = translationService.getActiveTranslation().properties.languageLabel;
     this.languageEN = translationService.getActiveTranslation().properties.languageEN;
     this.languageDE = translationService.getActiveTranslation().properties.languageDE;
   }
