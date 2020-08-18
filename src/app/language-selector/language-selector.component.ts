@@ -12,6 +12,7 @@ export class LanguageSelectorComponent implements OnInit, OnDestroy {
   public languageLabel: string;
   public languageEN: string;
   public languageDE: string;
+  public selectedLanguage: boolean;
   private translationSubscription: Subscription;
 
   constructor(private translationService: TranslationsService) {
@@ -22,6 +23,7 @@ export class LanguageSelectorComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.translationSubscription = this.translationService.subscribe((data) => {
       this.languageLabel = data.properties.languageLabel;
+      this.selectedLanguage = data.name === 'en';
     });
   }
 

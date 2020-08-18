@@ -1,7 +1,7 @@
 <div class="language-selector">
   <label for="language">{{languageLabel}}</label>
   <select id="language" (change)="onChange($event.target.value)">
-    <option value="en">{{languageEN}}</option>
-    <option value="de">{{languageDE}}</option>
+    <option value="en" [selected]="selectedLanguage">{{languageEN}}</option>
+    <option value="de" [selected]="!selectedLanguage">{{languageDE}}</option>
   </select>
 </div>
