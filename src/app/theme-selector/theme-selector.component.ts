@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ThemeService} from 'src/app/theme/theme.service';
 import {TranslationsService} from '../translations/translations.service';
 import {Subscription} from 'rxjs';
+import {readRecord, storeToLocalStorage} from '../utilities/localStorageService';
+import {dark, light} from '../theme/theme';
 
 @Component({
   selector: 'app-theme-selector',
@@ -15,13 +17,10 @@ export class ThemeSelectorComponent implements OnInit {
   private translationSubscription: Subscription;
 
 
-  constructor(private themeService: ThemeService, private translationService: TranslationsService) {
-    this.interfaceColor = translationService.getActiveTranslation().properties.interfaceColor;
-    this.lightColorLabel = translationService.getActiveTranslation().properties.colors.color1;
-    this.darkColorLabel = translationService.getActiveTranslation().properties.colors.color2;
-  }
+  constructor(private themeService: ThemeService, private translationService: TranslationsService) {}
 
   ngOnInit(): void {
+    this.themeService.setActiveTheme(readRecord('theme') === 'light' ? light : dark);
     this.translationSubscription = this.translationService.subscribe((data) => {
       this.interfaceColor = data.properties.interfaceColor;
       this.lightColorLabel = data.properties.colors.color1;
@@ -31,9 +30,11 @@ export class ThemeSelectorComponent implements OnInit {
 
   setLightTheme(): void {
     this.themeService.setLightTheme();
+    storeToLocalStorage('theme', 'light');
   }
 
   setDarkTheme(): void {
     this.themeService.setDarkTheme();
+    storeToLocalStorage('theme', 'dark');
   }
 }
