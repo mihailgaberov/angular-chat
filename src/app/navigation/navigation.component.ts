@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {faComment, faCog} from '@fortawesome/free-solid-svg-icons';
 import {TranslationsService} from '../translations/translations.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-navigation',
@@ -13,11 +14,15 @@ export class NavigationComponent implements OnInit {
 
   public chatTabLabel: string;
   public settingsTabLabel: string;
+  private translationSubscription: Subscription;
 
-  constructor(private translationService: TranslationsService) {
-    this.chatTabLabel = translationService.getActiveTranslation().properties.nav.chatTabLabel;
-    this.settingsTabLabel = translationService.getActiveTranslation().properties.nav.settingsTabLabel;
+
+  constructor(private translationService: TranslationsService) {}
+
+  ngOnInit(): void {
+    this.translationSubscription = this.translationService.subscribe((data) => {
+      this.chatTabLabel = data.properties.nav.chatTabLabel;
+      this.settingsTabLabel = data.properties.nav.settingsTabLabel;
+    });
   }
-
-  ngOnInit(): void {}
 }
