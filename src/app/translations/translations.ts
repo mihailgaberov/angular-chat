@@ -16,8 +16,8 @@ export const english: Translations = {
       color2: 'Dark'
     },
     interfaceColor: 'Interface Color',
-    langCode: 'EN',
-    langLabel: 'Language',
+    languageCode: 'EN',
+    languageLabel: 'Language',
     languageEN: 'English',
     languageDE: 'Deutsch',
     nav: {
@@ -47,8 +47,8 @@ export const deutsch: Translations = {
       color2: 'Dunkel'
     },
     interfaceColor: 'Schnittstellenfarbe',
-    langLabel: 'Sprache',
-    langCode: 'DE',
+    languageLabel: 'Sprache',
+    languageCode: 'DE',
     languageEN: 'English',
     languageDE: 'Deutsch',
     nav: {

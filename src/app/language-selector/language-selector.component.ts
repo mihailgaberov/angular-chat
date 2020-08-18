@@ -15,14 +15,14 @@ export class LanguageSelectorComponent implements OnInit, OnDestroy {
   private translationSubscription: Subscription;
 
   constructor(private translationService: TranslationsService) {
-    this.languageLabel = translationService.getActiveTranslation().properties.langLabel;
+    this.languageLabel = translationService.getActiveTranslation().properties.languageLabel;
     this.languageEN = translationService.getActiveTranslation().properties.languageEN;
     this.languageDE = translationService.getActiveTranslation().properties.languageDE;
   }
 
   ngOnInit(): void {
     this.translationSubscription = this.translationService.subscribe((data) => {
-      console.log('>>> subscribe to:', data);
+      this.languageLabel = data.properties.languageLabel;
     });
   }
 
@@ -31,6 +31,6 @@ export class LanguageSelectorComponent implements OnInit, OnDestroy {
   }
 
   onChange(lang: string): void {
-    this.translationService.setActiveLanguage(lang === 'en' ? english : deutsch);
+    this.translationService.setActiveLanguage(lang === 'de' ? deutsch : english);
   }
 }
