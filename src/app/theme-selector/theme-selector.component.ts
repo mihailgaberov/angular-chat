@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ThemeService} from 'src/app/theme/theme.service';
 import {TranslationsService} from '../translations/translations.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-theme-selector',
@@ -11,6 +12,8 @@ export class ThemeSelectorComponent implements OnInit {
   public interfaceColor: string;
   public lightColorLabel: string;
   public darkColorLabel: string;
+  private translationSubscription: Subscription;
+
 
   constructor(private themeService: ThemeService, private translationService: TranslationsService) {
     this.interfaceColor = translationService.getActiveTranslation().properties.interfaceColor;
@@ -19,6 +22,11 @@ export class ThemeSelectorComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.translationSubscription = this.translationService.subscribe((data) => {
+      this.interfaceColor = data.properties.interfaceColor;
+      this.lightColorLabel = data.properties.colors.color1;
+      this.darkColorLabel = data.properties.colors.color2;
+    });
   }
 
   setLightTheme(): void {
