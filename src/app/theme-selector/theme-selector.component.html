@@ -1,11 +1,11 @@
 <div class="theme-selector">
   <label>{{interfaceColor}}</label>
   <div class="radio-group">
-    <div><input checked type="radio" id="light" name="theme-selectors" (click)="setLightTheme()"/>
+    <div><input [checked]="selectedTheme" type="radio" id="light" name="theme-selectors" (click)="setLightTheme()"/>
       <label for="light">{{lightColorLabel}}</label>
     </div>
     <div>
-      <input type="radio" id="dark" name="theme-selectors" (click)="setDarkTheme()"/>
+      <input [checked]="!selectedTheme" type="radio" id="dark" name="theme-selectors" (click)="setDarkTheme()"/>
       <label for="dark">{{darkColorLabel}}</label>
     </div>
   </div>
