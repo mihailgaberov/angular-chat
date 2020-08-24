@@ -2,16 +2,19 @@
   <label>{{clockDisplay}}</label>
   <div class="radio-group">
     <div>
-      <input checked
+      <input [checked]="selectedClockMode"
+             (click)="setClockModeHours12()"
              type="radio"
              id="12hours"
-             name="clock-selectors" />
+             name="clock-selectors"/>
       <label for="12hours">{{hours12}}</label>
     </div>
     <div>
-      <input type="radio"
+      <input [checked]="!selectedClockMode"
+             (click)="setClockModeHours24()"
+             type="radio"
              id="24hours"
-             name="clock-selectors" />
+             name="clock-selectors"/>
       <label for="24hours">{{hours24}}</label>
     </div>
   </div>

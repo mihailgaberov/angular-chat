@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { TranslationsService } from '../translations/translations.service';
 import { readRecord, storeToLocalStorage } from '../utilities/localStorageService';
+import { CLOCK_MODES } from '../enums/clock-modes';
 
 @Component({
   selector: 'app-clock-mode-selector',
@@ -12,9 +13,11 @@ export class ClockModeSelectorComponent implements OnInit {
   public clockDisplay: string;
   public hours12: string;
   public hours24: string;
+  public selectedClockMode: boolean;
   private translationSubscription: Subscription;
 
   constructor(private translationService: TranslationsService) {
+    this.selectedClockMode = readRecord('clockMode') === CLOCK_MODES.hours12;
   }
 
   ngOnInit(): void {
@@ -25,4 +28,11 @@ export class ClockModeSelectorComponent implements OnInit {
     });
   }
 
+  setClockModeHours12(): void {
+    storeToLocalStorage('clockMode', CLOCK_MODES.hours12);
+  }
+
+  setClockModeHours24(): void {
+    storeToLocalStorage('clockMode', CLOCK_MODES.hours24);
+  }
 }
