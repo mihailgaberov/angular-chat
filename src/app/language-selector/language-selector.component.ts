@@ -1,7 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslationsService } from '../translations/translations.service';
-import { deutsch, english } from '../translations/translations';
+import { deutsch, english, Translations } from '../translations/translations';
 import { Subscription } from 'rxjs';
+import { readRecord, storeToLocalStorage } from '../utilities/localStorageService';
+import { LANGUAGES } from '../enums/languages';
 
 @Component({
   selector: 'app-language-selector',
@@ -16,6 +18,7 @@ export class LanguageSelectorComponent implements OnInit, OnDestroy {
   private translationSubscription: Subscription;
 
   constructor(private translationService: TranslationsService) {
+    this.selectedLanguage = readRecord('lang') === LANGUAGES.english;
     this.languageEN = translationService.getActiveTranslation().properties.languageEN;
     this.languageDE = translationService.getActiveTranslation().properties.languageDE;
   }
@@ -23,7 +26,6 @@ export class LanguageSelectorComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.translationSubscription = this.translationService.subscribe((data) => {
       this.languageLabel = data.properties.languageLabel;
-      this.selectedLanguage = data.name === 'en';
     });
   }
 
@@ -32,6 +34,8 @@ export class LanguageSelectorComponent implements OnInit, OnDestroy {
   }
 
   onChange(lang: string): void {
-    this.translationService.setActiveLanguage(lang === 'de' ? deutsch : english);
+    const currentSelectedLanguage: Translations = lang === LANGUAGES.english ? english : deutsch;
+    this.translationService.setActiveLanguage(currentSelectedLanguage);
+    storeToLocalStorage('lang', lang);
   }
 }
