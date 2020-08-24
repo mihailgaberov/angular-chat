@@ -7,6 +7,7 @@ An Angular single page chat application (SPA) built with the following technolog
 - RxJS
 - Express.js with Socket.io
 - SASS
+- Angular Testing Library
 - Karma/Jasmine
 
 ### Screenshots
