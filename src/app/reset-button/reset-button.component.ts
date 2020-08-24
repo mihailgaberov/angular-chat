@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {TranslationsService} from '../translations/translations.service';
-import {Subscription} from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { TranslationsService } from '../translations/translations.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-reset-button',

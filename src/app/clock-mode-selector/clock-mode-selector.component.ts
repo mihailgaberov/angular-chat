@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Subscription} from 'rxjs';
-import {TranslationsService} from '../translations/translations.service';
+import { Subscription } from 'rxjs';
+import { TranslationsService } from '../translations/translations.service';
+import { readRecord, storeToLocalStorage } from '../utilities/localStorageService';
 
 @Component({
   selector: 'app-clock-mode-selector',
@@ -13,7 +14,8 @@ export class ClockModeSelectorComponent implements OnInit {
   public hours24: string;
   private translationSubscription: Subscription;
 
-  constructor(private translationService: TranslationsService) { }
+  constructor(private translationService: TranslationsService) {
+  }
 
   ngOnInit(): void {
     this.translationSubscription = this.translationService.subscribe((data) => {

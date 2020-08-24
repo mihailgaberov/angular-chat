@@ -1,7 +1,7 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {TranslationsService} from '../translations/translations.service';
-import {deutsch, english} from '../translations/translations';
-import {Subscription} from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { TranslationsService } from '../translations/translations.service';
+import { deutsch, english } from '../translations/translations';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-language-selector',

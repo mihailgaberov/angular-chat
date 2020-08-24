@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {faComment, faCog} from '@fortawesome/free-solid-svg-icons';
-import {TranslationsService} from '../translations/translations.service';
-import {Subscription} from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { faComment, faCog } from '@fortawesome/free-solid-svg-icons';
+import { TranslationsService } from '../translations/translations.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-navigation',
@@ -17,7 +17,8 @@ export class NavigationComponent implements OnInit {
   private translationSubscription: Subscription;
 
 
-  constructor(private translationService: TranslationsService) {}
+  constructor(private translationService: TranslationsService) {
+  }
 
   ngOnInit(): void {
     this.translationSubscription = this.translationService.subscribe((data) => {

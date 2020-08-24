@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
-import {english, Translations} from './translations';
-import {BehaviorSubject, Subscription} from 'rxjs';
+import { Injectable } from '@angular/core';
+import { english, Translations } from './translations';
+import { BehaviorSubject, Subscription } from 'rxjs';
 
 
 @Injectable({

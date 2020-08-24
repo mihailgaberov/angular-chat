@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {TranslationsService} from '../translations/translations.service';
-import {Subscription} from 'rxjs';
+import { TranslationsService } from '../translations/translations.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-sending-options',
@@ -13,7 +13,8 @@ export class SendingOptionsComponent implements OnInit {
   public option2: string;
   private translationSubscription: Subscription;
 
-  constructor(private translationService: TranslationsService) { }
+  constructor(private translationService: TranslationsService) {
+  }
 
   ngOnInit(): void {
     this.translationSubscription = this.translationService.subscribe((data) => {

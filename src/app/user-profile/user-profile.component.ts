@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {TranslationsService} from '../translations/translations.service';
-import {Subscription} from 'rxjs';
+import { TranslationsService } from '../translations/translations.service';
+import { Subscription } from 'rxjs';
 import { readRecord, storeToLocalStorageDebounced } from '../utilities/localStorageService';
 
 
