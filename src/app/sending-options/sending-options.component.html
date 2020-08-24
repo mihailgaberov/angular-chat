@@ -1,11 +1,21 @@
 <div class="sending-options">
   <label>{{ctrlEnterOptionsTitle}}</label>
   <div class="radio-group">
-    <div><input checked type="radio" id="on" name="sending-options-selectors" />
+    <div><input
+      [checked]="selectedSendingOptions"
+      (click)="setCtrlEnterOn()"
+      type="radio"
+      id="on"
+      name="sending-options-selectors" />
       <label for="on">{{option1}}</label>
     </div>
     <div>
-      <input type="radio" id="off" name="sending-options-selectors" />
+      <input
+        [checked]="!selectedSendingOptions"
+        (click)="setCtrlEnterOff()"
+        type="radio"
+        id="off"
+        name="sending-options-selectors" />
       <label for="off">{{option2}}</label>
     </div>
   </div>

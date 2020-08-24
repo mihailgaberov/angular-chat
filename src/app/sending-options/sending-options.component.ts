@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslationsService } from '../translations/translations.service';
+import { readRecord, storeToLocalStorage } from '../utilities/localStorageService';
 import { Subscription } from 'rxjs';
+import { SENDING_OPTIONS } from '../enums/sending-options';
 
 @Component({
   selector: 'app-sending-options',
@@ -11,9 +13,11 @@ export class SendingOptionsComponent implements OnInit {
   public ctrlEnterOptionsTitle: string;
   public option1: string;
   public option2: string;
+  public selectedSendingOptions: boolean;
   private translationSubscription: Subscription;
 
   constructor(private translationService: TranslationsService) {
+    this.selectedSendingOptions = readRecord('ctrlEnterSending') === SENDING_OPTIONS.CTRL_ENTER_ON;
   }
 
   ngOnInit(): void {
@@ -24,4 +28,11 @@ export class SendingOptionsComponent implements OnInit {
     });
   }
 
+  setCtrlEnterOn(): void {
+    storeToLocalStorage('ctrlEnterSending', SENDING_OPTIONS.CTRL_ENTER_ON);
+  }
+
+  setCtrlEnterOff(): void {
+    storeToLocalStorage('ctrlEnterSending', SENDING_OPTIONS.CTRL_ENTER_OFF);
+  }
 }
