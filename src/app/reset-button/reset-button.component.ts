@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslationsService } from '../translations/translations.service';
 import { Subscription } from 'rxjs';
+import { clearAll } from '../utilities/localStorageService';
 
 @Component({
   selector: 'app-reset-button',
@@ -20,4 +21,7 @@ export class ResetButtonComponent implements OnInit {
     });
   }
 
+  onReset(): void {
+    clearAll();
+  }
 }
