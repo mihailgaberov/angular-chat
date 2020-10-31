@@ -13,6 +13,10 @@ import { ClockModeSelectorComponent } from './clock-mode-selector/clock-mode-sel
 import { SendingOptionsComponent } from './sending-options/sending-options.component';
 import { LanguageSelectorComponent } from './language-selector/language-selector.component';
 import { ResetButtonComponent } from './reset-button/reset-button.component';
+import { ChatAreaComponent } from './chat-area/chat-area.component';
+import { MessageComponent } from './message/message.component';
+import { TimestampComponent } from './timestamp/timestamp.component';
+import { NicknameComponent } from './nickname/nickname.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import { ResetButtonComponent } from './reset-button/reset-button.component';
     ClockModeSelectorComponent,
     SendingOptionsComponent,
     LanguageSelectorComponent,
-    ResetButtonComponent
+    ResetButtonComponent,
+    ChatAreaComponent,
+    MessageComponent,
+    TimestampComponent,
+    NicknameComponent
   ],
   imports: [
     BrowserModule,
