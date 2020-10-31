@@ -6,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nickname.component.scss']
 })
 export class NicknameComponent implements OnInit {
+  public nickname = 'User001';
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }
