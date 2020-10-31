@@ -3,9 +3,9 @@
 >_I have written a tutorial about how I did this. You can find it [here](https://mihail-gaberov.eu/) or [here](https://mihail-gaberov.eu)_
 
 An Angular single page chat application (SPA) built with the following technologies:
-- Angular (v10.0.0 at the moment of writting)
+- Angular (v10.0.0 at the moment of writing)
 - RxJS
-- Express.js with Socket.io
+- Express.js with SignalR
 - SASS
 - Angular Testing Library
 - Karma/Jasmine
@@ -72,10 +72,7 @@ To run the e2e tests:
 ```shell
 ng e2e
 ```
-Browse to [http://localhost:4200](http://localhost:4200) and see the running app. In order to test, open it in two different computers,
- or computer and a phone, or two browsers on the same computer (one of it in incognito mode). 
- _If you are running it locally, make sure to change the __host__ variable in Socket.ts (line:28) and its value to match
- your local network address - the one of the computer you are running the server app._ 
+Browse to [http://localhost:4200](http://localhost:4200) and see the running app. In order to test, open it in two different computers, or computer and a phone, or two browsers on the same computer (one of it in incognito mode).
  
 ### Build
 
