@@ -13,7 +13,7 @@ import { THEMES } from '../enums/themes';
 })
 
 export class ThemeSelectorComponent implements OnInit {
-  public interfaceColor: string;
+  public interfaceColorLabel: string;
   public lightColorLabel: string;
   public darkColorLabel: string;
   private translationSubscription: Subscription;
@@ -26,7 +26,7 @@ export class ThemeSelectorComponent implements OnInit {
   ngOnInit(): void {
     this.themeService.setActiveTheme(readRecord('theme') === THEMES.light ? light : dark);
     this.translationSubscription = this.translationService.subscribe((data) => {
-      this.interfaceColor = data.properties.interfaceColor;
+      this.interfaceColorLabel = data.properties.interfaceColor;
       this.lightColorLabel = data.properties.colors.color1;
       this.darkColorLabel = data.properties.colors.color2;
     });
