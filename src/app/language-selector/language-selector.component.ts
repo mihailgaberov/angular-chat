@@ -14,13 +14,16 @@ export class LanguageSelectorComponent implements OnInit, OnDestroy {
   public languageLabel: string;
   public languageEN: string;
   public languageDE: string;
-  public selectedLanguage: boolean;
+  public selectedLanguage: string;
+  public selectedLanguageEnglish: LANGUAGES = LANGUAGES.english;
+  public selectedLanguageDeutsch: LANGUAGES = LANGUAGES.deutsch;
   private translationSubscription: Subscription;
 
   constructor(private translationService: TranslationsService) {
-    this.selectedLanguage = readRecord('lang') === LANGUAGES.english;
+    this.selectedLanguage = readRecord('lang');
     this.languageEN = translationService.getActiveTranslation().properties.languageEN;
     this.languageDE = translationService.getActiveTranslation().properties.languageDE;
+    this.onChange(this.selectedLanguage);
   }
 
   ngOnInit(): void {
