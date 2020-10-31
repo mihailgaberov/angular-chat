@@ -20,7 +20,7 @@ export class LanguageSelectorComponent implements OnInit, OnDestroy {
   private translationSubscription: Subscription;
 
   constructor(private translationService: TranslationsService) {
-    this.selectedLanguage = readRecord('lang');
+    this.selectedLanguage = readRecord('lang') || LANGUAGES.english;
     this.languageEN = translationService.getActiveTranslation().properties.languageEN;
     this.languageDE = translationService.getActiveTranslation().properties.languageDE;
     this.onChange(this.selectedLanguage);
