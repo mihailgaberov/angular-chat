@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-nickname',
@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nickname.component.scss']
 })
 export class NicknameComponent implements OnInit {
-  public nickname = 'User001';
+
+  @Input()
+  nickname = '';
 
   constructor() {}
 
