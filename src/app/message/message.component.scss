@@ -1,0 +1,13 @@
+.message-container {
+  font-size: .9em;
+  width: auto;
+  max-width: 250px;
+  padding: 7px;
+  display: block;
+  clear: both;
+
+  li {
+    border: 1px solid red;
+    list-style: none;
+  }
+}
